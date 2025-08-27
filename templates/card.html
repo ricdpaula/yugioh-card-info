@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh Card Info</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="main-title">
+        <h1>Yu-Gi-Oh Card Info</h1>
+    </div>
+    <form action="/api/data/" method="GET">
+        <input type="text" name="card_name" placeholder="Enter card name here" />
+        <button type="submit" class="btn1">Search</button>
+    </form>
+    {% if er_cardNotFound %}
+    <small class="error-form">{{ er_cardNotFound }}</small>
+    {% endif %}
+    <div class="card-container">
+        <img class="card-img" src="{{image}}" />
+        {% if not er_cardNotFound and card_name != false %}
+        <div class="card-info">
+            <h2>{{name}}</h2>
+            {% if frameType != "spell" and frameType != "trap" %}
+            <i>Level: {{level}} | {{type}} | {{race}} | {{attribute}}</i>
+            <div class="atk-def">
+                <button>ATK: {{attack}}</button>
+                <button>DEF: {{defense}}</button>
+            </div>
+            {% else %}
+            <i>{{type}} | {{race}}</i>
+            {% endif %}
+            <h3>Description:</h3>
+            <p>{{desc}}</p>
+        </div>
+        {% else %}
+        <i>Search for the name of a card in English</i>
+        {% endif %}
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+
+</html>

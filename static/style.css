@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Calibri"
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #001F3F;
+}
+
+.main-title {
+    padding: 12px 0px;
+}
+
+.main-title h1 {
+    color: white;
+}
+
+.btn1 {
+    color: #000;
+    text-decoration: none;
+    padding: 12px;
+    background-color: #FFD717;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    margin: 0px 6px;
+}
+
+.btn1:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: .4s;
+}
+
+.error-form {
+    color: #FFD717;
+    margin-bottom: 12px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    background-color: #083358;
+    color: white;
+    padding: 24px 12px;
+    width: fit-content;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card-container .card-img {
+    height: 300px;
+    transform-style: preserve-3d;
+}
+
+.card-container .card-info {
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+    max-width: 300px;
+    margin: 0px 12px;
+}
+
+.card-container .card-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD717;
+    margin: 0;
+}
+
+.card-container .card-info i {
+    font-size: 1rem;
+}
+
+.card-container .card-info .atk-def {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card-container .card-info .atk-def button {
+    margin-right: 6px;
+    border: none;
+    padding: 6px;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #FFD717;
+}
+
+.card-container .card-info h3 {
+    margin-top: 12px;
+}
+
+.card-container .card-info p {
+    font-size: 1rem;
+    width: 100%;
+}
+
+form {
+    width: 30%;
+    margin: 12px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+form input {
+    padding: 12px;
+    width: 100%;
+    color: #0D63A5;
+    background-color: transparent;
+    border: 2px solid #0D63A5;
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border: 2px solid #FFD717 !important;
+}
+
+@media only screen and (max-width: 800px) {
+    .main-title h1 {
+        text-align: center;
+    }
+    .card-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-container i, h2, h3, p{
+        text-align: center;
+    }
+    .card-container .card-info{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 12px;
+    }
+    form{
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn1{
+        margin-top: 12px;
+    }
+}
+
+@keyframes flipBack {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flipFront {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
